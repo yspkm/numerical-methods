@@ -2,7 +2,7 @@ function [x, D] = GaussPivotNew(A, b, tol)
 % 2017312605 김요셉
 % HW(0405)_Prob.9.17
 % Gauss Pivot and Get determinant.  
-% If D is below tol, then return 0.
+% If D is below tol, then error msg is displayed.
 %   [X D] = GaussPivot(A, b, tol): Gauss elimination with pivoting.
 % input:
 %   A = coefficient matrix

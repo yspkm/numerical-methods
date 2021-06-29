@@ -26,6 +26,7 @@ function yint = Newtint(x, y, xx)
             b(i, j+1) = (b(i+1, j) - b(i, j))/(x(i+j)-x(i));
         end
     end
+    disp(b);
     % use the finite diveded differences to interpolate 
     xt = 1;
     yint = b(1,1);

@@ -23,7 +23,10 @@ if test>0, error('no sign change'),end
 if nargin<4|isempty(es), es=0.0001;end
 if nargin<5|isempty(maxit), maxit=50;end
 iter = 0; xr = xl; ea = 100;
+fprintf("iter 0 means initial condition\n");
+fprintf("binary section, ea is %% error\n");
 while(1)
+    fprintf("iter:%8d    xl: %.7f    xu: %.7f    xr: %.7f    ea: %.7f\n", iter, xl, xu, xr, ea);
     xrold = xr;
     xr = (xl + xu)/2;
     iter = iter + 1;
@@ -38,4 +41,5 @@ while(1)
     end
     if ea <= es | iter >= maxit, break, end
 end
+fprintf("iter:%8d    xl: %.7f    xu: %.7f    xr: %.7f    ea: %.7f\n", iter, xl, xu, xr, ea);
 root = xr; fx = func(xr, varargin{:});
